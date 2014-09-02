@@ -1,9 +1,36 @@
-<div style="border: 3px dotted red">
-	<% if @visitor %>
-		<h1>OH HAI <%= @visitor %>!</h1>
-	<% end %>
-	<% if @name %>
-		<h1>ZOMG! MY NAEM IZ <%= @name %>!!</h1>
-	<% end %>
-	<img src="http://bit.ly/1eze8aE" />
+<div class="container">
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-10">
+			<% if @visitor_first_name && @visitor_last_name%>
+			<h1 class="text-center">OH HAI <%= @visitor_first_name + " " + @visitor_last_name %>!</h1>
+		<% else %>
+					<div class="row">
+						<div class="col-md-5">
+							<p class="text-center">My name is <%= @name %></p>
+							<p class="text-center">What's your name?</p>
+						</div>
+						<div class="col-md-5">
+							<form action="/hello">
+							<p class="text-center">First name:
+								<input type="text" name="first_name" />
+							</p>
+							<p class="text-center">Last name:
+								<input type="text" name="last_name" />
+							</p>
+							<div class="row">
+								<p class="text-center">
+									<button type="submit" class="btn btn-lg btn-primary">LULZ</button>
+								</p>
+							</div>
+							</form>
+						</div>
+					</div>
+			<% end %>
+			<% if @name %>
+			<h1 class="text-center">ZOMG! MY NAEM IZ <%= @name %>!!</h1>
+			<% end %>
+				<img class="center-block" src="http://localhost:4567/images/kitty.png" />
+		<div class="col-md-1"></div>
+	</ div>
 </div>

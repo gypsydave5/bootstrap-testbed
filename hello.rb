@@ -10,7 +10,8 @@ get '/secret' do
 end
 
 get '/hello' do
-	@visitor = (params[:first_name] + " " + params[:last_name]).upcase
+	@visitor_first_name = params[:first_name]
+	@visitor_last_name = params[:last_name]
 	@name = %w(Mabel Oscar Kittie).sample.upcase
 	erb :index
 end
